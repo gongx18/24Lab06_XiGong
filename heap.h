@@ -16,6 +16,8 @@ class Heap{
     int top();
     bool empty();
     void swap(int *a, int *b); 
+    //my own helper functions for debugging
+    void print_heap(); 
     
  private:
     std::vector<int> vdata; //store the binary heap tree as a dynamic array

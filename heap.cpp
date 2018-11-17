@@ -4,6 +4,8 @@
 #include "heap.h"
 #include <iostream>
 #include <vector>
+#include <string>
+#include <iterator>
 using std::cout;
 
 // Pushes a value into the heap, then ensures
@@ -61,4 +63,8 @@ void Heap::swap(int *x, int *y)
     *x = *y; 
     *y = temp; 
 } 
-    
+//my helper function
+void print_heap(){
+    for (std::vector<int>::const_iterator i = vdata.begin(); i != vdata.end(); ++i)
+        std::cout << *i << ' ';
+}    
