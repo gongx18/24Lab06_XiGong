@@ -64,7 +64,7 @@ void Heap::swap(int *x, int *y)
     *y = temp; 
 } 
 //my helper function
-void print_heap(){
+void Heap::print_heap(){
     for (std::vector<int>::const_iterator i = vdata.begin(); i != vdata.end(); ++i)
         std::cout << *i << ' ';
 }    
