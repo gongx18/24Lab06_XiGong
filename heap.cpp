@@ -11,7 +11,6 @@ using std::cout;
 // Pushes a value into the heap, then ensures
 // the heap is correctly arranged
 void Heap::push(int value){
-    
     vdata.push_back(value);
     // Fix the min heap property if it is violated 
     int i = vdata.size() - 1;
@@ -26,18 +25,21 @@ void Heap::push(int value){
 // Pops the minimum value off the heap
 // (but does not return it), then ensures
 // the heap is correctly arranged
-void Heap::pop(){
+void Heap::pop(){    
    int i = 0; 
    vdata[0] = vdata[vdata.size() - 1]; //replace the value of the smallest value by a leaf node; 
    vdata.pop_back();//delete the last element in vector 
 
-   while (i < (vdata.size() - 1)/2 && (vdata[i * 2 + 1] < vdata[i] || vdata[i * 2 + 2] < vdata[i])){
+   while ((i*2 + 1 < vdata.size()) && (vdata[i * 2 + 1] < vdata[i] || vdata[i * 2 + 2] < vdata[i])){
+
 	if(vdata[i * 2 + 1] < vdata[i *2 + 2]){
 	    swap(&vdata[i], &vdata[i*2 + 1]);
-	    i = i*2 + 1; 
+	    i = i*2 + 1;
+	     
 	}else{
 	    swap(&vdata[i], &vdata[i*2 + 2]); 
-	    i = i*2 + 2; 
+	    i = i*2 + 2;   
+	    
 	}
    }
 }
